@@ -83,6 +83,7 @@ class Game extends React.Component {
     return (
       <div className="game">
         <div className="game-board">
+          <Clock />
           <Board />
         </div>
         <div className="game-info">
@@ -112,6 +113,30 @@ function theWinner(squares) {
     }
   }
   return null;
+}
+
+// function Clock(props) {
+//   return (
+//     <div>
+//       <h1>Hello, world!</h1>
+//       <h2>It is {props.date.toLocaleTimeString()}.</h2>
+//     </div>
+//   );
+// }
+
+class Clock extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { date: new Date() };
+  }
+  render() {
+    return (
+      <div>
+        <h1>Hello World</h1>
+        <h2>Now is {this.state.date.toLocaleTimeString()}</h2>
+      </div>
+    );
+  }
 }
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
