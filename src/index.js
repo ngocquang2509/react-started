@@ -85,6 +85,7 @@ class Game extends React.Component {
         <div className="game-board">
           <Clock />
           <Board />
+          <Button />
         </div>
         <div className="game-info">
           <div>{/* status */}</div>
@@ -150,6 +151,30 @@ class Clock extends React.Component {
         <h1>Hello World</h1>
         <h2>Now is {this.state.date.toLocaleTimeString()}</h2>
       </div>
+    );
+  }
+}
+
+class Button extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isToogleOn: true,
+    };
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.setState((prevState) => ({
+      isToogleOn: !prevState.isToogleOn,
+    }));
+  }
+
+  render() {
+    return (
+      <button onClick={this.handleClick}>
+        {this.state.isToogleOn ? "ON" : "OFF"}
+      </button>
     );
   }
 }
