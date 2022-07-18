@@ -1,9 +1,9 @@
 import React from "react";
 
-class NameForm extends React.Component {
+class TextArea extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { value: "" };
+    this.state = { value: "Write some essay here" };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -14,7 +14,7 @@ class NameForm extends React.Component {
   }
 
   handleSubmit(e) {
-    alert("A new name was submitted: " + this.state.value);
+    alert("A new essay was submitted: " + this.state.value);
     e.preventDefault();
   }
 
@@ -22,12 +22,8 @@ class NameForm extends React.Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
-          Name:
-          <input
-            type="text"
-            value={this.state.value}
-            onChange={this.handleChange}
-          />
+          Essay:
+          <textarea value={this.state.value} onChange={this.handleChange} />
         </label>
         <input type="submit" value="Submit" />
       </form>
@@ -35,4 +31,4 @@ class NameForm extends React.Component {
   }
 }
 
-export default NameForm;
+export default TextArea;
