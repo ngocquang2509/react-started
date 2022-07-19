@@ -1,7 +1,7 @@
-import Game from "./components/Game";
+import Game from "./components/TicTacToe/Game";
 import Clock from "./components/Clock";
 import NumberList from "./components/List";
-import NameForm from "./components/Forms";
+import NameForm from "./components/Forms/Forms";
 import Calulator from "./components/Lifting State Up/BoilWater";
 
 function App() {
