@@ -2,6 +2,7 @@ import Game from "./components/Game";
 import Clock from "./components/Clock";
 import NumberList from "./components/List";
 import NameForm from "./components/Forms";
+import Calulator from "./components/Lifting State Up/BoilWater";
 
 function App() {
   const numbers = [1, 2, 3, 4, 5];
@@ -15,6 +16,7 @@ function App() {
       <NumberList numbers={numbers} />
       <h3>Form in React</h3>
       <NameForm />
+      <Calulator />
     </div>
   );
 }
