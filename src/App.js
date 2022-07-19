@@ -4,6 +4,7 @@ import NumberList from "./components/List";
 import NameForm from "./components/Forms/Forms";
 import Calulator from "./components/Lifting State Up/BoilWater";
 import Welcome from "./components/Composition/Welcome";
+import IncreDecre from "./components/IncreDecre";
 
 function App() {
   const numbers = [1, 2, 3, 4, 5];
@@ -19,6 +20,7 @@ function App() {
       <h3>Form in React</h3>
       <NameForm />
       <Calulator />
+      <IncreDecre />
     </div>
   );
 }
