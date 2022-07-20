@@ -11,4 +11,21 @@ function Example() {
   );
 }
 
-export default Example;
+function ManyStates() {
+  const [age, setAge] = useState(22);
+  const [fruit, setFruit] = useState("apple");
+  const [todos, setTodos] = useState([{ text: "Learn Hook" }]);
+
+  const updateAge = (e) => {
+    setAge(e.target.value);
+  };
+
+  return (
+    <div>
+      <p>Your age is {age}</p>
+      <input type="number" onChange={updateAge} value={age}></input>
+    </div>
+  );
+}
+
+export default ManyStates;
