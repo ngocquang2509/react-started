@@ -42,6 +42,7 @@ const action = {
 };
 
 const newTodos = todoReducer(initialTodos, action);
+console.log(newTodos);
 
 const Reducer = () => {
   const [todos, dispatch] = React.useReducer(todoReducer, initialTodos);
