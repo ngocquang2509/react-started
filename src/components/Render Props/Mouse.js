@@ -2,13 +2,16 @@ import React from "react";
 
 
 class Mouse extends React.Component {
-    state = {x: 0, y: 0}
+    constructor(props){
+        super(props);
+        this.state = {x: 0, y: 0}
+        this.handleMouseMove = this.handleMouseMove.bind(this)
+    }
 
-    handleMouseMove = (e) => {
-        const {clientX, clientY} = e
+    handleMouseMove(e) {
         this.setState({
-            x: clientX,
-            y: clientY
+            x: e.clientX,
+            y: e.clientY
         })
     }
 
