@@ -8,27 +8,28 @@ class ColorChange extends React.Component {
     this.state = {
       favoritecolor: 'red'
     }
-    this.changeColor = this.changeColor.bind(this)
   }
 
-  shouldComponentUpdate() {
-    return false
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({favoritecolor: "yellow"})
+    }, 2000)
   }
 
-  // static getDerivedStateFromProps(props, state) {
-  //   return {favoritecolor: props.favCol}
-  // }
+  getSnapshotBeforeUpdate(preProps, preState) {
+    document.getElementById('div1').innerHTML = 'The color before update was: ' + preState.favoritecolor
+  }
 
-  changeColor() {
-    this.setState({favoritecolor: 'blue'})
-    console.log('The color changed to Blue')
+  componentDidUpdate() {
+    document.getElementById('div2').innerHTML = 'The color after update is ' + this.state.favoritecolor
   }
 
   render() {
     return (
       <div>
         <h1>My favorite color is: {this.state.favoritecolor}</h1>
-        <button type="button" onClick={this.changeColor}>Change Color</button>
+        <div id="div1"></div>
+        <div id="div2"></div>
       </div>
     )
   }
