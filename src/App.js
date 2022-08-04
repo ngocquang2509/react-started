@@ -1,12 +1,12 @@
 import React from "react";
 import Clock from "./components/Clock";
-import Product from "./components/Product/Product";
+import Counter from "./components/useState/Counter";
 
 function App() {
   return (
     <div>
       <Clock />
-      <Product />
+      <Counter/>
     </div>
   );
 }
