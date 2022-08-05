@@ -1,6 +1,7 @@
 import React, { useReducer } from "react";
 import "./App.css";
 import Clock from "./components/Clock";
+import ToDo from "./components/useReducer/Todo";
 // import Content from "./components/useContext/Content";
 // import {ThemeContext} from './components/useContext/ThemeContext'
 // import {ThemeProvider} from './components/useContext/ThemeContext'
@@ -38,6 +39,8 @@ function App() {
       <h1>{count}</h1>
       <button onClick={() => dispatch(DECRE_ACTION)}>Down</button>
       <button onClick={() => dispatch(INCRE_ACTION)}>Up</button>
+      <hr/>
+      <ToDo/>
     </>
   );
 }
